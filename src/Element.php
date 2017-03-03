@@ -166,7 +166,7 @@ class Element
 
     /**
      * @param  string $attribute
-     * @param  null   $value
+     * @param  null|string   $value
      * @return $this
      */
     public function addAttribute($attribute, $value = null)
