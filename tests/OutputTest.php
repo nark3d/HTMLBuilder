@@ -4,7 +4,11 @@ namespace BestServedCold\HTMLBuilder;
 
 class OutputTest extends TestCase
 {
+    public function testSelfMethod()
+    {
 
+    }
+    
     public function testOutput()
     {
         $this->assertEquals(

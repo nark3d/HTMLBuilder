@@ -125,13 +125,12 @@ class Element
     }
 
     /**
-     * @param  bool       $bool
      * @return $this
      * @throws \Exception
      */
-    public function setVoid($bool = true)
+    public function setVoid()
     {
-        if ($bool && $this->getValue()) {
+        if ($this->getValue() !== null) {
             throw new \Exception('Void elements cannot have a value.');
         }
 
@@ -165,7 +164,7 @@ class Element
     }
 
     /**
-     * @param  string $attribute
+     * @param  string        $attribute
      * @param  null|string   $value
      * @return $this
      */

@@ -8,8 +8,8 @@ namespace BestServedCold\HTMLBuilder;
  * @package BestServedCold\Benchmark\Output\Html
  * @method static $this a
  * @method static $this abbr
- *  @method static $this address
- *  @method static $this area
+ * @method static $this address
+ * @method static $this area
  * @method static $this article
  * @method static $this aside
  * @method static $this audio
@@ -21,41 +21,41 @@ namespace BestServedCold\HTMLBuilder;
  * @method static $this body
  * @method static $this br
  * @method static $this button
- *  @method static $this canvas
+ * @method static $this canvas
  * @method static $this caption
  * @method static $this cite
- *  @method static $this code
+ * @method statid $this code
  * @method static $this col
- *  @method static $this colgroup
- *  @method static $this datalist
+ * @method static $this colgroup
+ * @method static $this datalist
  * @method static $this dd
- *  @method static $this del
- *  @method static $this details
+ * @method static $this del
+ * @method static $this details
  * @method static $this dfn
- *  @method static $this dialog
+ * @method static $this dialog
  * @method static $this div
  * @method static $this dl
  * @method static $this dt
  * @method static $this em
  * @method static $this embed
  * @method static $this fieldset
- *  @method static $this figcaption
- *  @method static $this figure
- *  @method static $this footer
+ * @method static $this figcaption
+ * @method static $this figure
+ * @method static $this footer
  * @method static $this form
  * @method static $this h1
  * @method static $this h2
- *  @method static $this h3
+ * @method static $this h3
  * @method static $this h4
  * @method static $this h5
- *  @method static $this h6
+ * @method static $this h6
  * @method static $this head
  * @method static $this header
  * @method static $this hr
- *  @method static $this html
+ * @method static $this html
  * @method static $this i
  * @method static $this iframe
- *  @method static $this img
+ * @method static $this img
  * @method static $this input
  * @method static $this ins
  * @method static $this kbd
@@ -64,8 +64,8 @@ namespace BestServedCold\HTMLBuilder;
  * @method static $this legend
  * @method static $this li
  * @method static $this link
- *  @method static $this main
- *  @method static $this map
+ * @method static $this main
+ * @method static $this map
  * @method static $this mark
  * @method static $this menu
  * @method static $this menuitem
@@ -239,7 +239,7 @@ class Builder extends Element
     /**
      * @var array
      */
-    private static $void = [
+    private static $voidElements = [
         'area',
         'base',
         'br',
@@ -261,6 +261,7 @@ class Builder extends Element
     /**
      * @param  $name
      * @param  $arguments
+     * @throws \Exception
      * @return Element
      */
     public static function __callStatic($name, $arguments)
@@ -269,16 +270,7 @@ class Builder extends Element
             return self::voidTag($name) ? Element::add($name)->void() : Element::add($name);
         }
 
-        return self::isSelfMethod($name)? self::$name($arguments) : parent::$name($arguments);
-    }
-
-    /**
-     * @param  $name
-     * @return bool
-     */
-    private static function isSelfMethod($name)
-    {
-        return method_exists(self::class, $name);
+        throw new \Exception('Method [' . $name . '] does not exist in context [' . static::class . '].');
     }
 
     /**
@@ -305,6 +297,8 @@ class Builder extends Element
      */
     private static function voidTag($name)
     {
-        return in_array($name, self::$void);
+        return in_array($name, self::$voidElements);
     }
 }
+ 
+

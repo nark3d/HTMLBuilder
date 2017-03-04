@@ -4,11 +4,11 @@ namespace BestServedCold\HTMLBuilder;
 
 class BuilderTest extends TestCase
 {
-    public function testIsSelfMethod()
+    public function testCallStatic()
     {
-        $builder = $this->reflect(Builder::class);
-        $this->assertEquals(true, $builder->isSelfMethod('comment'));
-        $this->assertEquals(false, $builder->isSelfMethod('sadfljasdksdflskdjflksdjfksdjf'));
+        $this->assertInstanceOf(Element::class, Builder::div());
+        $this->expectException(\Exception::class);
+        Builder::thisDoesNotExistYouMonkey();
     }
 
     public function testComment()
