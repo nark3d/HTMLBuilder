@@ -1,5 +1,5 @@
 {
-  "name": "bestservedcold/htmlbuilder",
+  "name": "best-served-cold/html-builder",
   "description": "HTML Builder - Build HTML programatically.",
   "keywords": ["HTML", "Builder", "HTML Builder", "Best Served Cold"],
   "homepage": "http://bestservedcold.com",
@@ -12,7 +12,6 @@
       "homepage": "http://adam.lewis.gb.com"
     }
   ],
-  "minimum-stability": "dev",
   "require" : {
     "php": ">=5.6.28",
     "best-served-cold/phalue-objects": "dev-master"
