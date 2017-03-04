@@ -239,7 +239,7 @@ class Builder extends Element
     /**
      * @var array
      */
-    private static $void = [
+    private static $voidElements = [
         'area',
         'base',
         'br',
@@ -297,6 +297,6 @@ class Builder extends Element
      */
     private static function voidTag($name)
     {
-        return in_array($name, self::$void);
+        return in_array($name, self::$voidElements);
     }
 }
