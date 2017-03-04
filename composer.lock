@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "568ab96d136e8fc77accf80e179e885e",
-    "content-hash": "6f181c5f71f1891af9cb190a16e00790",
+    "hash": "330fe8cb81cafee529be6770f0cc6525",
+    "content-hash": "a83994b27cf9081841256dba20bcced2",
     "packages": [
         {
             "name": "best-served-cold/phalue-objects",
-            "version": "dev-master",
+            "version": "v0.0.9-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nark3d/PhalueObjects.git",
@@ -1647,7 +1647,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "best-served-cold/phalue-objects": 20
+        "best-served-cold/phalue-objects": 15
     },
     "prefer-stable": false,
     "prefer-lowest": false,
