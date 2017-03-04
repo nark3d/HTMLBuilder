@@ -130,7 +130,7 @@ class Element
      */
     public function setVoid()
     {
-        if ($this->getValue()) {
+        if ($this->getValue() !== null) {
             throw new \Exception('Void elements cannot have a value.');
         }
 
