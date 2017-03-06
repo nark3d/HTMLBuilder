@@ -8,12 +8,13 @@
 
 # HTML Builder
 
-Basic HTML builder for HTML5.  We're not suggesting that you use this to build entire pages, but occasionally there is a need to create HTML programatically, like a table, and that's what this is for!
+Basic HTML builder for HTML5.  We're not suggesting that you use this to build entire pages, but occasionally there is 
+a need to create HTML programatically, like a table, and that's what this is for!
 
 ## Install
 
 ```php
-composer require bestservedcold/htmlbuilder
+composer require best-served-cold/html-builder
 ```
 
 ## Usage
