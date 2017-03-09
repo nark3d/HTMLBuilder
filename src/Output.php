@@ -2,37 +2,48 @@
 
 namespace BestServedCold\HTMLBuilder;
 
+use BestServedCold\HTMLBuilder\Html\Node;
+use BestServedCold\HTMLBuilder\Output\Format;
 use BestServedCold\PhalueObjects\ExtendedArray\ExtendedArrayTrait;
+use BestServedCold\HTMLBuilder\Output\Children;
 
+/**
+ * Class Output
+ * 
+ * @package BestServedCold\HTMLBuilder
+ */
 class Output
 {
     use ExtendedArrayTrait;
 
     /**
-     * @var Element
+     * @var Node
      */
-    private $tag;
+    private $node;
 
     /**
      * @var int
      */
-    private $depth;
-
-    /**
-     * @var int
-     */
-    private static $tabSize = 4;
+    private static $depth = 0;
 
     /**
      * Output constructor.
      *
-     * @param Element $tag
-     * @param int     $depth
+     * @param Node $node
+     * @param int  $depth
      */
-    public function __construct(Element $tag, $depth = 0)
+    public function __construct(Node $node, $depth = null)
     {
-        $this->tag      = $tag;
-        $this->depth    = $depth;
+        $this->node  = $node;
+        $depth ? self::$depth = $depth : null;
+    }
+
+    /**
+     * @param int $depth
+     */
+    public static function setDepth($depth)
+    {
+        self::$depth = $depth;
     }
 
     /**
@@ -40,67 +51,18 @@ class Output
      */
     public function get()
     {
-        return $this->tag->isVoid()
-            ? $this->begin()
-            : $this->begin() .
-            $this->inner() .
-            $this->children() .
-            $this->end();
+        $begin = Format::begin($this->node, $this->attributes(), self::$depth);
+        return $this->node->isVoid()
+            ? $begin
+            : $begin . Children::run($this->node, self::$depth) . Format::end($this->node, self::$depth);
     }
 
     /**
-     * @param $size
+     * @param int $tabSize
      */
-    public static function setTabSize($size)
+    public static function setTabSize($tabSize)
     {
-        self::$tabSize = $size;
-    }
-
-    /**
-     * @param  string $string
-     * @return string
-     */
-    private function children($string = '')
-    {
-        /** @var Element $child */
-        foreach ($this->tag->getChildren() as $child) {
-            $string .= $this->child($child);
-        }
-
-        return $string;
-    }
-
-    /**
-     * @param  Element $child
-     * @return mixed
-     */
-    private function child(Element $child)
-    {
-        return (new static($child, $this->depth + 1))->get();
-    }
-
-    /**
-     * @return string
-     */
-    private function begin()
-    {
-        return $this->getTab('<' . $this->tag->getType()  . $this->attributes() . '>', $this->depth) . PHP_EOL;
-    }
-
-    /**
-     * @return null|string
-     */
-    private function inner()
-    {
-        return $this->tag->getValue() ? $this->getTab($this->tag->getValue(), $this->depth + 1) . PHP_EOL : null;
-    }
-
-    /**
-     * @return string
-     */
-    private function end()
-    {
-        return $this->getTab('</' . $this->tag->getType() . '>', $this->depth) . PHP_EOL;
+        Format::setTabSize($tabSize);
     }
 
     /**
@@ -109,18 +71,8 @@ class Output
      */
     private function attributes($string = ' ')
     {
-        return $this->tag->hasAttributes()
-            ? $string . $this->arrayToAttributeArray($this->tag->getAttributes())
-            : null ;
-    }
-
-    /**
-     * @param  $input
-     * @param  $depth
-     * @return string
-     */
-    private function getTab($input, $depth)
-    {
-        return str_pad($input, strlen($input) + ($depth * self::$tabSize), ' ', STR_PAD_LEFT);
+        return empty($this->node->getAttributes())
+            ? null
+            : $string . $this->arrayToAttributeArray($this->node->getAttributes());
     }
 }
