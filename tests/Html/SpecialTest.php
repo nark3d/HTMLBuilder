@@ -16,7 +16,8 @@ class SpecialTest extends TestCase
     public function testDocType()
     {
         $docType = $this->docType();
-        $this->assertEquals('html', reset(array_keys($docType->getAttributes())));
+        $arrayKeys = array_keys($docType->getAttributes());
+        $this->assertEquals('html', $arrayKeys[0]);
         $this->assertEquals('!DOCTYPE', $docType->getType());
     }
 }

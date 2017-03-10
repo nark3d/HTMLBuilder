@@ -191,7 +191,7 @@ class Node
     use Override;
 
     /**
-     * @var $string $type
+     * @var string $type
      */
     private $type;
 

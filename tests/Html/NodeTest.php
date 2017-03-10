@@ -38,7 +38,8 @@ class NodeTest extends TestCase
     public function testGetContent()
     {
         $content = $this->node->for()->content('testFor');
-        $this->assertEquals('testFor', reset($content->getContent()));
+        $contentArray = $content->getContent();
+        $this->assertEquals('testFor', $contentArray[0]);
     }
 
     public function testGetChildren()
