@@ -26,11 +26,6 @@ class Children
     private $node;
 
     /**
-     * @var array $children
-     */
-    private $children;
-
-    /**
      * Children constructor.
      *
      * @param Node  $node
