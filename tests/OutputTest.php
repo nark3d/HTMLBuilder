@@ -17,6 +17,7 @@ class OutputTest extends TestCase
 
     public function testGet()
     {
+        Output::setDepth(0);
         $this->assertEquals("<div>\n</div>\n", (new Output($this->node))->get());
     }
 

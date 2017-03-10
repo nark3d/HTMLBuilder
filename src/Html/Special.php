@@ -24,6 +24,6 @@ trait Special
      */
     public static function doctype($value = null)
     {
-        return (new Node('!DOCTYPE'))->attribute($value = $value ?: 'html')->void();
+        return (new Node('!DOCTYPE'))->attribute($value ?: 'html')->void();
     }
 }

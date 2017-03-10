@@ -24,7 +24,12 @@ class Output
     /**
      * @var int
      */
-    private static $depth = 0;
+    private $depth = 0;
+
+    /**
+     * @var int
+     */
+    private static $initialDepth = 0;
 
     /**
      * Output constructor.
@@ -35,7 +40,7 @@ class Output
     public function __construct(Node $node, $depth = null)
     {
         $this->node  = $node;
-        $depth ? self::$depth = $depth : null;
+        $this->depth = $depth ? $depth : self::$initialDepth;
     }
 
     /**
@@ -43,7 +48,7 @@ class Output
      */
     public static function setDepth($depth)
     {
-        self::$depth = $depth;
+        self::$initialDepth = $depth;
     }
 
     /**
@@ -51,10 +56,10 @@ class Output
      */
     public function get()
     {
-        $begin = Format::begin($this->node, $this->attributes(), self::$depth);
+        $begin = Format::begin($this->node, $this->attributes(), $this->depth);
         return $this->node->isVoid()
             ? $begin
-            : $begin . Children::run($this->node, self::$depth) . Format::end($this->node, self::$depth);
+            : $begin . Children::run($this->node, $this->depth) . Format::end($this->node, $this->depth);
     }
 
     /**

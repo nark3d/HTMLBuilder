@@ -269,14 +269,6 @@ class Node
     }
 
     /**
-     * @return mixed|null
-     */
-    public function getFinalContent()
-    {
-        return empty($this->content) ? null : array_pop($this->content);
-    }
-
-    /**
      * @return array
      */
     public function getChildren()
@@ -309,7 +301,9 @@ class Node
      */
     public function attribute($attribute, $value = null)
     {
-        is_array($attribute) ? $this->attributeArray($attribute) : $this->attributes[$attribute] = $value;
+        is_array($attribute)
+            ? $this->attributeArray($attribute)
+            : $this->attributes[$attribute] = $value;
         return $this;
     }
 

@@ -10,7 +10,7 @@ class NodeTest extends TestCase
 
     public function setUp()
     {
-        $this->node = new Node('label');
+        $this->node = new Node('label', [new Node('span')]);
     }
 
     public function testInvalidAttribute()
@@ -39,5 +39,30 @@ class NodeTest extends TestCase
     {
         $content = $this->node->for()->content('testFor');
         $this->assertEquals('testFor', reset($content->getContent()));
+    }
+
+    public function testGetChildren()
+    {
+        $this->isType('array', $this->node->getChildren());
+    }
+
+    public function testHasChildren()
+    {
+        $this->assertTrue($this->node->hasChildren());
+    }
+
+    public function testAttributeArray()
+    {
+        $this->node->attributeArray(['id' => 'someId', 'onblur' => 'someAction'])->getAttributes();
+        $this->assertEquals(
+            ['id'     => 'someId', 'onblur' => 'someAction'],
+            $this->node->getAttributes()
+        );
+    }
+
+    public function testIsVoid()
+    {
+        $this->node->void();
+        $this->assertTrue($this->node->isVoid());
     }
 }

@@ -12,6 +12,13 @@ use BestServedCold\HTMLBuilder\Html\Node;
 trait Override
 {
     /**
+     * @param  $type
+     * @param  $string
+     * @return Node
+     */
+    public abstract function attribute($type, $string);
+
+    /**
      * @param string        $string
      * @param string|null   $type
      * @return Node

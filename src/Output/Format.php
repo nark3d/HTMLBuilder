@@ -52,6 +52,6 @@ abstract class Format
      */
     public static function end(Node $node, $depth)
     {
-        return self::string('</' . $node->getType() . '>', $node->hasChildren() ? $depth - 1 : $depth);
+        return self::string('</' . $node->getType() . '>', $depth);
     }
 }
