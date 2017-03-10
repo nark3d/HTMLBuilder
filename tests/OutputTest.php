@@ -1,40 +1,36 @@
 <?php
 
-namespace BestServedCold\HTMLBuilder;
+namespace BestServedCold\HTMLBuilder\Html;
+
+use BestServedCold\HTMLBuilder\Output,
+    BestServedCold\HTMLBuilder\TestCase,
+    BestServedCold\HTMLBuilder\Output\Format;
 
 class OutputTest extends TestCase
 {
-    public function testSelfMethod()
-    {
+    private $node;
 
-    }
-    
-    public function testOutput()
+    public function setUp()
     {
-        $this->assertEquals(
-            "<test susan=\"mary\" disabled>\n    bob\n</test>\n",
-            (new Output(Element::add('test')->value('bob')->attribute('susan', 'mary')->attribute('disabled')))->get()
-        );
+        $this->node = new Node('div');
     }
 
-    public function testOutputChild()
+    public function testGet()
     {
-        $output = new Output(
-            Element::add('test')->value('bob')->attribute('susan', 'mary')->attribute('disabled')->child(
-                Element::add('test2')->void()
-            )
-        );
-
-        $this->assertEquals("<test susan=\"mary\" disabled>\n    bob\n    <test2>\n</test>\n",
-            $output->get()
-        );
-
-
+        Output::setDepth(0);
+        $this->assertEquals("<div>\n</div>\n", (new Output($this->node))->get());
     }
+
     public function testSetTabSize()
     {
-        Output::setTabSize(20);
-        $output = $this->reflect(Output::class);
-        $this->assertEquals(20, $output->tabSize);
+        Output::setTabSize(8);
+        $this->assertEquals(8, $this->reflect(Format::class)->tabSize);
     }
+
+    public function testSetDepth()
+    {
+        Output::setDepth(8);
+        $this->assertEquals(8, $this->reflect(new Output($this->node))->depth);
+    }
+
 }
