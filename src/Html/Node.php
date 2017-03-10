@@ -2,9 +2,9 @@
 
 namespace BestServedCold\HTMLBuilder\Html;
 
-use BestServedCold\HTMLBuilder\Html\Node\Children,
-    BestServedCold\HTMLBuilder\Html\Node\Attribute,
-    BestServedCold\HTMLBuilder\Html\Node\Override;
+use BestServedCold\HTMLBuilder\Html\Node\Children;
+use BestServedCold\HTMLBuilder\Html\Node\Attribute;
+use BestServedCold\HTMLBuilder\Html\Node\Override;
 
 
 /**
