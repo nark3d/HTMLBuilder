@@ -43,7 +43,7 @@ class Children
     /**
      * @return string
      */
-    private function children()
+    public function children()
     {
         $this->string .= $this->getContent();
 
