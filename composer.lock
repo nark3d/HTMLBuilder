@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "66bf9c02c61ae046d98061ae5380d136",
-    "content-hash": "8be7eb5a920b1a294527191bde574f2a",
+    "hash": "b96ed1661df777828984b5214deab24b",
+    "content-hash": "81ca9169e95056f70f88ee8884a3e5ad",
     "packages": [
         {
             "name": "best-served-cold/phalue-objects",
-            "version": "v0.0.9-alpha",
+            "version": "v0.0.10-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nark3d/PhalueObjects.git",
-                "reference": "fc9588b16f16c1c7921b3f81c3b6cb18e802b18e"
+                "reference": "e01315b83a607a789982aaeabd358611134479dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nark3d/PhalueObjects/zipball/fc9588b16f16c1c7921b3f81c3b6cb18e802b18e",
-                "reference": "fc9588b16f16c1c7921b3f81c3b6cb18e802b18e",
+                "url": "https://api.github.com/repos/nark3d/PhalueObjects/zipball/e01315b83a607a789982aaeabd358611134479dc",
+                "reference": "e01315b83a607a789982aaeabd358611134479dc",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0",
+                "php": ">=5.6",
                 "sabre/xml": "^1.5",
                 "symfony/finder": "2.*",
                 "symfony/yaml": "2.*"
@@ -48,7 +48,7 @@
                 {
                     "name": "Adam Lewis",
                     "email": "adam.lewis@bestservedcold.com",
-                    "homepage": "http://adam.lewis.gb.com"
+                    "homepage": "http://adamlewis.gb.com"
                 }
             ],
             "description": "Phalue Objects - PHP Value Objects",
@@ -59,7 +59,7 @@
                 "immutable",
                 "value objects"
             ],
-            "time": "2017-03-03 20:48:02"
+            "time": "2017-03-11 17:06:49"
         },
         {
             "name": "sabre/uri",
@@ -177,16 +177,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v2.8.17",
+            "version": "v2.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "355fccac526522dc5fca8ecf0e62749a149f3b8b"
+                "reference": "5fc4b5cab38b9d28be318fcffd8066988e7d9451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/355fccac526522dc5fca8ecf0e62749a149f3b8b",
-                "reference": "355fccac526522dc5fca8ecf0e62749a149f3b8b",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/5fc4b5cab38b9d28be318fcffd8066988e7d9451",
+                "reference": "5fc4b5cab38b9d28be318fcffd8066988e7d9451",
                 "shasum": ""
             },
             "require": {
@@ -222,20 +222,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:30:24"
+            "time": "2017-02-21 08:33:48"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.17",
+            "version": "v2.8.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "322a8c2dfbca15ad6b1b27e182899f98ec0e0153"
+                "reference": "2a7bab3c16f6f452c47818fdd08f3b1e49ffcf7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/322a8c2dfbca15ad6b1b27e182899f98ec0e0153",
-                "reference": "322a8c2dfbca15ad6b1b27e182899f98ec0e0153",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/2a7bab3c16f6f452c47818fdd08f3b1e49ffcf7d",
+                "reference": "2a7bab3c16f6f452c47818fdd08f3b1e49ffcf7d",
                 "shasum": ""
             },
             "require": {
@@ -271,7 +271,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-21 16:40:50"
+            "time": "2017-03-01 18:13:50"
         }
     ],
     "packages-dev": [
