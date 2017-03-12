@@ -15,6 +15,16 @@ class OutputTest extends TestCase
         $this->node = new Node('div');
     }
 
+    public function testRender()
+    {
+        ob_start();
+        (new Output($this->node))->render();
+        $string = ob_get_contents();
+        ob_end_clean();
+
+        $this->assertEquals("<div>\n</div>\n", $string);
+    }
+
     public function testGet()
     {
         Output::setDepth(0);
