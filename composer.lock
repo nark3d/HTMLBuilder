@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b96ed1661df777828984b5214deab24b",
-    "content-hash": "81ca9169e95056f70f88ee8884a3e5ad",
+    "hash": "5756c33c765538fa7ef09079f4be87dc",
+    "content-hash": "bce013d76a68e4ae4637bda01a77b6aa",
     "packages": [
         {
             "name": "best-served-cold/phalue-objects",
-            "version": "v0.0.10-alpha",
+            "version": "v0.0.11-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nark3d/PhalueObjects.git",
-                "reference": "e01315b83a607a789982aaeabd358611134479dc"
+                "reference": "ab5a7edfb26e3cc966e9a1f67a3f0e342176fd8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nark3d/PhalueObjects/zipball/e01315b83a607a789982aaeabd358611134479dc",
-                "reference": "e01315b83a607a789982aaeabd358611134479dc",
+                "url": "https://api.github.com/repos/nark3d/PhalueObjects/zipball/ab5a7edfb26e3cc966e9a1f67a3f0e342176fd8b",
+                "reference": "ab5a7edfb26e3cc966e9a1f67a3f0e342176fd8b",
                 "shasum": ""
             },
             "require": {
@@ -59,7 +59,7 @@
                 "immutable",
                 "value objects"
             ],
-            "time": "2017-03-11 17:06:49"
+            "time": "2017-03-12 13:06:57"
         },
         {
             "name": "sabre/uri",
