@@ -63,6 +63,14 @@ class Output
     }
 
     /**
+     * 
+     */
+    public function render()
+    {
+        echo $this->get();
+    }
+
+    /**
      * @param int $tabSize
      */
     public static function setTabSize($tabSize)
